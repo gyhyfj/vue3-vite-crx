@@ -1,0 +1,43 @@
+{
+  "name": "template-crx",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "author": "gyhyfj",
+  "description": "template-crx-description",
+  "icons": {
+    "16": "/assets/logo.png",
+    "48": "/assets/logo.png",
+    "96": "/assets/logo.png",
+    "128": "/assets/logo.png"
+  },
+  "action": {
+    "default_title": "template-crx",
+    "default_popup": "/popup/index.html"
+  },
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "background": {
+    "service_worker": "/background/index.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/contentScript/index.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["contentScript/style.css"],
+    "matches": ["<all_urls>"]
+  }]
+}

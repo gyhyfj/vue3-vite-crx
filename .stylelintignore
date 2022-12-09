@@ -1,0 +1,6 @@
+src/components/content-skeleton/
+src/styles/module/
+dist/
+public/
+crx/
+dev-crx/

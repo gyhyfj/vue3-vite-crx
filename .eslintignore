@@ -1,0 +1,7 @@
+/dist
+/node_modules
+/.vscode
+/public
+/scripts/hot-reload/injectCode.js
+/crx
+/dev-crx
